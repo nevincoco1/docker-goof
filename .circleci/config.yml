@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: docker:19.03.13
+    - image: 'circleci/buildpack-deps:stretch'
     environment:
       IMAGE_NAME: docker-goof
     steps:
