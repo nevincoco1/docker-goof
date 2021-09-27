@@ -11,10 +11,10 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          command: 'docker build -t $IMAGE_NAME:latest .'
+          command: 'docker build -t $IMAGE_NAME:test .'
           name: Build Docker image
       - snyk/scan:
-          docker-image-name: '$IMAGE_NAME:latest'
+          docker-image-name: '$IMAGE_NAME:test'
           fail-on-issues: false
           monitor-on-build: true
           project: '${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BRANCH}-container'
